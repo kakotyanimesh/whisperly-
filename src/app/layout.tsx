@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${myFont.className}  antialiased md:mx-32 mx-5`}
+        className={`${myFont.className}  antialiased `}
       >
         <Navbar/>
         {children}
