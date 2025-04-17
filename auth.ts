@@ -1,66 +1,64 @@
-import { signinObject } from "@/config/zod";
-import prisma from "@/lib/prisma";
-import bcrypt from "bcryptjs";
-import NextAuth, { CredentialsSignin } from "next-auth";
-import Credentials from "next-auth/providers/credentials";
+import Nextauth, { CredentialsSignin } from "next-auth"
+import Credentials from "next-auth/providers/credentials"
+import {signinObject} from "@/config/zod"
+import prisma from "@/lib/prisma"
+import bcrypt from "bcryptjs"
 
-
-export const {handlers , signIn, signOut, auth} = NextAuth({
-    secret : process.env.AUTH_SECRET || "asdasd",
-    session : {
-        strategy : "jwt"
-    },
+export const { handlers, auth} = Nextauth({
     providers : [
         Credentials({
             name : "credentials",
             credentials : {
-                username : {label : "username", placeholder : "animesh@45", type: "text"},
-                password : {label : "password", placeholder : "Discpline", type: "password"}
+                username : {label : "username", type : "text", placeholder : "animesh33"},
+                password : {label : "password", type : "password", placeholder : "animeshasdpas"}
             },
             authorize : async (credentials) => {
                 const parsedObject = signinObject.safeParse(credentials)
 
                 if(!parsedObject.success){
-                    throw new CredentialsSignin("Invalid type of credentials")
+                    throw new CredentialsSignin("Invalid inputs")
                 }
 
-                const {username, password} = credentials 
+                const { username, password } = parsedObject.data
 
                 try {
                     const user = await prisma.user.findUnique({
                         where : {
-                            username : username as string
+                            username
                         }
                     })
 
-                    if(!user) {
-                        throw new Error("Invalid user or password")
+                    if(!user){
+                        throw new Error("Invalid username or password")
                     }
 
-                    const comparePassword = await bcrypt.compare(password as string, user.password)
+                    const comparePassword = await bcrypt.compare(password, user.password)
 
-                    if(!comparePassword) {
-                        throw new Error("Invalid password")
+                    if(!comparePassword){
+                        throw new Error("Invalid password or username")
                     }
 
                     const userData = {
                         email : user.email,
-                        username : user.username,
-                        id : user.id.toString()
+                        id : user.id.toString(),
+                        username : user.username
+
                     }
+
                     return userData
                 } catch (error) {
-                    throw new Error(`sign in error ${error}`)
+                    throw new Error(`error at signin ${error}`)
                 }
             }
         })
     ],
-    pages : {
-        signIn : "/signin"
+    secret : process.env.AUTH_SECRET,
+    session : {
+        strategy : "jwt",
+        maxAge : 60 * 60 * 60
     },
     callbacks : {
-
-        async jwt ({token, user}){
+        async jwt({token, user}){
             if(user){
                 token.email = user.email
                 token.id = user.id
@@ -71,17 +69,18 @@ export const {handlers , signIn, signOut, auth} = NextAuth({
             if(token.sub){
                 session.user.id = token.sub
                 session.user.email = token.email as string
-                session.user.id= token.id
             }
             return session
         },
-
-        signIn: async ({account}) => {
+        signIn : async ({account}) => {
             if(account?.provider === "credentials"){
                 return true
             } else {
                 return false
             }
         }
+    },
+    pages : {
+        signIn : "/signin"
     }
 })
