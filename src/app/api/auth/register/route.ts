@@ -13,7 +13,7 @@ export async function POST(req:NextRequest) {
 
     if(!parsedObject.success){
         return NextResponse.json(
-            {msg : `Error at validate the schema ${parsedObject.error.errors}`},
+            {msg : `Error at validate the schema ${JSON.stringify(parsedObject.error.errors)}`},
             {status : 400}
         )
     }
