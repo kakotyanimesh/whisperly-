@@ -60,9 +60,11 @@ export const AudioCard = ({character, source, quote, audioSrc} : AudioCardProps)
         setprogress(clickedInpercentage)
     }
     return (
-        <div className='space-y-3 bg-gradient-to-tr from-slate-700 to-zink-900 rounded-xl border-1 border-zinc-700 md:w-xl md:px-10 px-5 pt-5 pb-4'>
+        <div className='space-y-3 bg-[hsl(238,58%,10%)]  rounded-xl border-1 border-zinc-700 md:w-xl md:px-10 px-5 pt-5 pb-4'>
             {/* first div  */}
             <audio src={audioSrc} preload='auto' ref={audiRef}></audio>
+            {/* <audio src={audioSrc} preload="auto" ref={audiRef} />    */}
+
             <div className='flex flex-row justify-between items-center'>
                 <div className='flex flex-row  justify-between gap-2 text-start'>
                     <div className='bg-gradient-to-bl from-[hsl(var(--primary))] via-pink-400 flex items-center justify-center md:size-10 size-7 rounded-full  to-[hsl(var(--secondary))]'>
