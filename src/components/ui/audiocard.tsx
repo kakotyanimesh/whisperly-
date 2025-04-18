@@ -60,7 +60,7 @@ export const AudioCard = ({character, source, quote, audioSrc} : AudioCardProps)
         setprogress(clickedInpercentage)
     }
     return (
-        <div className='space-y-3 bg-[hsl(238,58%,10%)]  rounded-xl border-1 border-zinc-700 md:w-xl md:px-10 px-5 pt-5 pb-4'>
+        <div className='space-y-3 bg-[hsl(237,26%,15%)]  rounded-xl border-1 border-zinc-700 md:w-xl md:px-10 px-5 pt-5 pb-4'>
             {/* first div  */}
             <audio src={audioSrc} preload='auto' ref={audiRef}></audio>
             {/* <audio src={audioSrc} preload="auto" ref={audiRef} />    */}

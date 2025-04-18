@@ -7,8 +7,8 @@ export const buttonVariants = cva(
     {
       variants : {
         variant : {
-            primary : "transition-all ease-linear bg-gradient-to-br from-[hsl(var(--primary))] via-pink-500  to-[hsl(var(--secondary))] text-white  hover:bg-gradient-to-tr hover:from-[hsl(var(--secondary))] hover:to-[hsl(var(--primary))] md:rounded-br-2xl md:hover:rounded-bl-2xl rounded-br-xl md:rounded-tl-2xl md:hover:rounded-tr-2xl rounded-tl-xl",
-            secondary : "border border-slate-600 text-slate-50 bg-gradient-to-tr from-slate-700 to-zink-900 text-pink-500 md:rounded-tr-2xl hover:rounded-tl-2xl rounded-tr-xl md:rounded-bl-2xl hover:rounded-br-2xl transition-all ease-linear rounded-bl-xl",
+            primary : "transition-all ease-linear bg-gradient-to-br from-[hsl(var(--primary))] via-pink-500  to-[hsl(var(--secondary))] text-white hover:bg-gradient-to-tr md:rounded-br-2xl md:hover:rounded-br-xl md:hover:rounded-bl-xl rounded-br-xl md:rounded-tl-2xl hover:rounded-tl-xl md:hover:rounded-tr-xl rounded-tl-xl",
+            secondary : "border border-slate-600 text-slate-50 bg-gradient-to-tr from-slate-700 to-zink-900 hover:text-pink-500 md:rounded-tr-2xl md:hover:rounded-tr-xl hover:rounded-tl-xl rounded-tr-xl md:rounded-bl-2xl md:hover:rounded-bl-xl hover:rounded-br-xl transition-all ease-linear rounded-bl-xl",
             loading : ""
         },
         size : {
