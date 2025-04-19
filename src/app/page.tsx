@@ -1,6 +1,7 @@
 import { Features } from "@/components/features";
 import Footer from "@/components/footer";
 import HomePage from "@/components/header";
+import { Navbar } from "@/components/navbar";
 import TextCard from "@/components/ui/textcard";
 
 
@@ -8,6 +9,7 @@ import TextCard from "@/components/ui/textcard";
 export default function Home() {
   return (
     <div className="mb-10 md:mx-32 mx-5 space-y-20">
+      <Navbar/>
       <HomePage/>
       <Features/>
       <div className="flex justify-center items-center text-center">

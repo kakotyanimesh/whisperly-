@@ -42,7 +42,7 @@ export default function SignUp() {
                 </div>
                 <InputBox ref={usernameRef} type="email" placeholder="your username " label="username" />
                 <InputBox ref={passwordRef} type="password" placeholder="Write your password here " label="password" />
-                <Button disabled={isClicked} variant={isClicked ? "secondary" : "primary"} className="w-full md:mt-10 mt-5" size="primary" onClick={signin}>{isClicked ? "spinnninn...." : "sign in"}</Button>
+                <Button disabled={isClicked} variant={isClicked ? "secondary" : "primary"} className="w-full md:mt-10 mt-5" size="primary" onClick={signin}>{isClicked ? "signinnnn...." : "sign in"}</Button>
                 <p className="text-sm text-center">Don&apos;t have an account ? <Link href="/signup" className="text-pink-500">Sign up </Link> </p>
             </div>
         </div>

@@ -6,7 +6,7 @@ import Link from "next/link"
 export const Navbar = () => {
     const router = useRouter()
     return (
-        <div className="mt-5 flex  justify-between md:mx-32 mx-5">
+        <div className="mt-5 flex  justify-between ">
             <Link href="/" className="flex items-center gap-2">
                 <div className="bg-gradient-to-b from-[hsl(var(--primary))] via-pink-400 to-[hsl(var(--secondary))] w-10 h-10 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-lg">WI</span>

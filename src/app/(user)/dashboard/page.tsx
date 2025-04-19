@@ -1,4 +1,4 @@
-import { auth } from "../../../auth"
+import { auth } from "../../../../auth"
 
 
 export default async function dashboard() {
@@ -8,6 +8,7 @@ export default async function dashboard() {
             {
                 JSON.stringify(session)
             }
+            <h1>bew </h1>
         </div>
     )
 }

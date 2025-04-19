@@ -20,12 +20,14 @@ export default function HomePage(){
         <div className="flex items-center flex-col  mt-40 text-center">
             <div className="space-y-7 relative md:mx-30">
                 <motion.div 
+                viewport={{once :true}}
                 initial={{opacity : 0, scale : 0.5, y : 10}}
                 whileInView={{opacity : 0.2, y : 0, scale: 1, transition: {duration : 0.7, ease : 'circOut'}}}
                 className="absolute md:left-5 md:-top-15 -top-21 bg-gradient-to-bl from-[hsl(var(--primary))] via-pink-400 opacity-20 to-[hsl(var(--secondary))] md:size-52 size-42 md:rounded-tr-[5rem] rounded-tr-[3rem] md:rounded-bl-[5rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl">
 
                 </motion.div>
                 <motion.div 
+                viewport={{once : true}}
                 initial={{opacity : 0, y : 10, scale : 0.5}} 
                 whileInView={{opacity : 0.2, y : 0, scale : 1, transition :{duration : 0.7, ease : 'circOut'}}}
                 className="absolute md:right-24 right-2 md:top-49 top-46 bg-gradient-to-br from-[hsl(var(--primary))] via-pink-400 opacity-20 to-[hsl(var(--secondary))] size-42  rounded-t-full rounded-br-full">
@@ -54,7 +56,7 @@ export default function HomePage(){
                 </motion.div>
                 <motion.div 
                 viewport={{once : true}}
-                initial={{y : 5, opacity : 0, scale : 0.5}} animate={{y : 0, opacity :1, scale :1  , transition : {duration : 0.7, ease : "circOut"}}}
+                initial={{y : 5, opacity : 0.5, scale : 0.7}} animate={{y : 0, opacity :1, scale :1  , transition : {duration : 0.7, ease : "circOut"}}}
                 className="flex justify-center items-center mt-20">
                     <AudioCard character="MI-jeong" audioSrc="/audio/liberationaudio.mp3" source="My Liberation Notes" quote="if we had lived in seoul, would we have been different? no matter where i lived... i think i would have been the same. regardless of where i lived, my life would have been just like this."/>
 
