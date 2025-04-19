@@ -6,16 +6,36 @@ import { motion } from "motion/react";
 
 
 export default function HomePage(){
+    // const animationRef = useRef<HTMLDivElement>(null)
+
+    // useAnimationFrame((t) => {
+    //     if(!animationRef.current) return
+
+    //     const rotate = Math.sin(t / 1000) * 50
+    //     // const y = (1 + Math.sin(t/ 1000)) * -50
+    //     animationRef.current.style.transform = ` rotateY(${rotate}deg)`
+    // })
     
     return (
         <div className="flex items-center flex-col  mt-40 text-center">
             <div className="space-y-7 relative md:mx-30">
-                <motion.div className="absolute md:left-5 md:-top-15 -top-21 bg-gradient-to-bl from-[hsl(var(--primary))] via-pink-400 opacity-20 to-[hsl(var(--secondary))] md:size-52 size-42 md:rounded-tr-[5rem] rounded-tr-[3rem] md:rounded-bl-[5rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl">
+                <motion.div 
+                initial={{opacity : 0, scale : 0.5, y : 10}}
+                animate={{opacity : 0.2, scale : 1, y : 0}}
+                transition={{
+                    duration : 0.5,
+                    ease : 'circOut',
+                    // scale : {type : "spring", visualDuration : 0.9, bounce : 0.3}
+                }}
+                className="absolute md:left-5 md:-top-15 -top-21 bg-gradient-to-bl from-[hsl(var(--primary))] via-pink-400 opacity-20 to-[hsl(var(--secondary))] md:size-52 size-42 md:rounded-tr-[5rem] rounded-tr-[3rem] md:rounded-bl-[5rem] rounded-bl-[3rem] rounded-tl-2xl rounded-br-2xl">
 
                 </motion.div>
-                <div className="absolute md:right-24 right-2 md:top-49 top-46 bg-gradient-to-br from-[hsl(var(--primary))] via-pink-400 opacity-20 to-[hsl(var(--secondary))] size-42  rounded-t-full rounded-br-full">
+                <motion.div 
+                initial={{opacity : 0, y : 10, scale : 0.5}} 
+                whileInView={{opacity : 0.2, y : 0, scale : 1, transition :{duration : 0.7, ease : 'circOut'}}}
+                className="absolute md:right-24 right-2 md:top-49 top-46 bg-gradient-to-br from-[hsl(var(--primary))] via-pink-400 opacity-20 to-[hsl(var(--secondary))] size-42  rounded-t-full rounded-br-full">
 
-                </div>
+                </motion.div>
                 <motion.h1 initial={{y : 5, opacity : 0}} whileInView={{y : 0, opacity : 1, transition: {duration : 0.2, ease : "circOut"}}} className="md:text-7xl text-4xl">Whispers of Peace from Your Favorite 
                     <span className="bg-gradient-to-r font-[50] from-[hsl(var(--primary))] via-pink-300 to-[hsl(var(--secondary))] bg-clip-text text-transparent"> Voices </span>
                 </motion.h1>
