@@ -37,11 +37,14 @@ export default auth((req) => {
    * if already logged in them redirect to default_redirect_url
    */
   if(isAuthenticationRoutes){
-    
     if(isLoggedIn){
       return Response.redirect(new URL(DEFAULT_REDIRECT_URL, nextUrl))
     }
     return 
+  }
+
+  if (isLoggedIn && isPublicRoutes) {
+    return Response.redirect(new URL(DEFAULT_REDIRECT_URL, nextUrl));
   }
 
   if(!isLoggedIn && !isPublicRoutes){

@@ -35,6 +35,8 @@ export async function POST(req:NextRequest) {
             {msg : "user created"}
         )
     } catch (error) {
+        // console.error(error);
+        
         if(error instanceof PrismaClientKnownRequestError && error.code === "P2002"){
             return NextResponse.json(
                 {msg : "user already exits"},
@@ -43,7 +45,8 @@ export async function POST(req:NextRequest) {
         }
     }
     return NextResponse.json(
-        {msg : "Error at register user"},
+        {msg : `Error at register user`},
         {status : 500}
     )
+
 }

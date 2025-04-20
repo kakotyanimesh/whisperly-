@@ -55,8 +55,10 @@ const authConfig : NextAuthConfig =  {
     callbacks : {
         async jwt({token, user}){
             if(user){
+                
                 token.email = user.email
                 token.id = user.id
+                token.username = (user as {username : string}).username 
             }
             return token
         },
@@ -64,6 +66,9 @@ const authConfig : NextAuthConfig =  {
             if(token.sub){
                 session.user.id = token.sub
                 session.user.email = token.email as string
+                session.user.name = token.username as string
+                // console.log(session);
+                
             }
             return session
         },
