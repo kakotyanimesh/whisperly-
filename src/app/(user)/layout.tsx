@@ -35,7 +35,7 @@ export default function RootLayout({children} : {
 
                     }
                 </div>
-                <Button className="bottom-10 md:absolute md:block hidden">AI </Button>
+                <Button className="bottom-10 md:absolute md:block hidden">Become an Artist </Button>
             </div>
             <div className="pt-10 px-5 md:mx-0 flex-1 overflow-y-auto h-full">
                 {children}

@@ -14,3 +14,9 @@ export const signinObject = z.object({
 
 
 })
+
+export const artistObject = z.object({
+    displayName : z.string().max(20, {message : "Max 20 words is allowed for displayName"}),
+    bio : z.string().max(160, {message : "Your bio text limit exceeded"}).min(10, {message : 'Minimum 10 letters of bio needed'}),
+    gender : z.enum(["MALE", "FEMALE", "TRANSGENDER", "NON_BINARY"]),
+})

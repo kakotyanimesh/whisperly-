@@ -121,7 +121,49 @@ exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
   password: 'password',
-  username: 'username'
+  username: 'username',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ArtistProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  bio: 'bio',
+  displayName: 'displayName',
+  gender: 'gender',
+  avtarUrl: 'avtarUrl',
+  bannerUrl: 'bannerUrl',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.AudiosScalarFieldEnum = {
+  id: 'id',
+  artistId: 'artistId',
+  audioUrl: 'audioUrl',
+  title: 'title',
+  desc: 'desc',
+  duration: 'duration',
+  voicedataId: 'voicedataId',
+  createdAt: 'createdAt',
+  public: 'public'
+};
+
+exports.Prisma.VoiceMetaScalarFieldEnum = {
+  id: 'id',
+  domVoice: 'domVoice',
+  femaleCount: 'femaleCount',
+  maleCount: 'maleCount',
+  nonBinaryCount: 'nonBinaryCount',
+  transCount: 'transCount'
+};
+
+exports.Prisma.SubscriptionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  artistId: 'artistId',
+  paidday: 'paidday'
 };
 
 exports.Prisma.SortOrder = {
@@ -133,10 +175,19 @@ exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
 };
-
+exports.Gender = exports.$Enums.Gender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+  TRANSGENDER: 'TRANSGENDER',
+  NON_BINARY: 'NON_BINARY'
+};
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  ArtistProfile: 'ArtistProfile',
+  Audios: 'Audios',
+  VoiceMeta: 'VoiceMeta',
+  Subscription: 'Subscription'
 };
 
 /**
