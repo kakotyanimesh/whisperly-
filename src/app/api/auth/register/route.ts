@@ -3,6 +3,7 @@ import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs"
 import prisma from "@/lib/prisma";
+import { error } from "console";
 
 
 
@@ -45,7 +46,7 @@ export async function POST(req:NextRequest) {
         }
     }
     return NextResponse.json(
-        {msg : `Error at register user`},
+        {msg : `Error at register user ${error}`},
         {status : 500}
     )
 
