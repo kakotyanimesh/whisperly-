@@ -26,7 +26,7 @@ export const Features = () => {
     )
 }
 
-interface FeaturesCardProps {
+export interface FeaturesCardProps {
     icon : ReactNode,
     title : string,
     desc : string
@@ -42,7 +42,7 @@ const childVariant = {
     initial : {rotate : 0},
     hover : {rotate : 40, y : -1, transition : {duration : 0.3, easeIn}}
 }
-const FeatureCard = ({icon, title, desc, linktag, src, middleone} : FeaturesCardProps) => {
+export const FeatureCard = ({icon, title, desc, linktag, src, middleone} : FeaturesCardProps) => {
     return (
         <motion.div initial="initial" whileHover="hover" className={` group text-start space-y-5  border-1 border-white/15 transition-all ease-linear bg-white/10 shadow-md  p-6 ${middleone === true ? "hover:rounded-3xl" : "rounded-bl-3xl rounded-tr-3xl hover:rounded-br-3xl hover:rounded-tl-3xl"}`}>
             <motion.div variants={childVariant} className="bg-gradient-to-br from-[hsl(var(--primary))] via-pink-600 to-[hsl(var(--secondary))] w-10 h-10 flex items-center justify-center rounded-full group-hover:shadow group-hover:shadow-pink-400">

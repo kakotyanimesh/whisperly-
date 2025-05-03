@@ -10,6 +10,8 @@ export default function RootLayout({children} : {
     children : React.ReactNode
 }) {
     const params = usePathname()
+    console.log(params.split("/")[1]);
+    
     
     return (
         <div className="flex h-screen md:gap-10 overflow-hidden">
@@ -25,7 +27,7 @@ export default function RootLayout({children} : {
                         sidebarRoutes.map((s, k) => (
                             <Link 
                             className={`px-4 py-2 transition-all ease-linear flex items-center gap-3
-                            ${params === s.src ? "bg-slate-600 md:rounded-md rounded-bl-2xl rounded-tr-2xl"  : "hover:bg-slate-600 hover:rounded-tr-2xl hover:rounded-bl-2xl"}    
+                            ${params.split("/")[1] === s.src.split("/")[1] ? "bg-slate-600 md:rounded-md rounded-bl-2xl rounded-tr-2xl"  : "hover:bg-slate-600 hover:rounded-tr-2xl hover:rounded-bl-2xl"}    
                             `}
                             href={s.src} key={k}>
                                 <span className=" text-pink-600">{s.icon}</span>
@@ -38,6 +40,7 @@ export default function RootLayout({children} : {
                 <Button className="bottom-10 md:absolute md:block hidden">Become an Artist </Button>
             </div>
             <div className="pt-10 px-5 md:mx-0 flex-1 overflow-y-auto h-full">
+                
                 {children}
             </div>
         </div>

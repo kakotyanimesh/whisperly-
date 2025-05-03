@@ -28,13 +28,9 @@ export default function SignUp() {
     }
     return (
         <div className="flex flex-col justify-center items-center mt-20 relative">
-            <div className="absolute md:-top-24 md:right-103 -top-10 right-2">
-                <CuteCircleOne/>
-            </div>
-            <div className="absolute md:-bottom-15 md:left-96 -bottom-27 left-4 ">
-                <CutecircleTwo/>
+            <CuteCircleOne className="absolute md:-top-24 md:right-103 -top-10 right-2 size-52"/>
+            <CutecircleTwo className="md:size-52 size-32 absolute md:-bottom-15 md:left-96 -bottom-27 left-4 "/>
                 
-            </div>
             <div className={`md:p-10 p-7 border-[1px] border-slate-700  bg-[hsl(238,58%,10%)] rounded-bl-3xl  rounded-tr-3xl  md:space-y-4 space-y-3 ${isClicked ? "opacity-40" : undefined}`}>
                 <div className="text-center md:w-80 w-60 space-y-3">
                     <h1 className="md:text-3xl text-2xl ">Welcome back Brother </h1>

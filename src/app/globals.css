@@ -44,3 +44,13 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
 }
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+}

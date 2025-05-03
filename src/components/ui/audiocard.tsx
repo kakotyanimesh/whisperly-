@@ -1,3 +1,4 @@
+"use client"
 import { AudioLines, Heart, Pause, Play  } from 'lucide-react';
 import React, { useRef, useState, useEffect } from 'react';
 
