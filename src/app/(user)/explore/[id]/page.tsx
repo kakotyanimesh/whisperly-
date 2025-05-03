@@ -2,7 +2,7 @@ import { AudioCard } from "@/components/ui/audiocard"
 import { Card } from "@/components/ui/displayCard"
 import Image from "next/image"
 
-export default async function Player({params} : {params : {id : string}}){
+export default async function Player({params} : {params : Promise<{id : string}>}){
 
     const {id} = await params
     console.log(id);
