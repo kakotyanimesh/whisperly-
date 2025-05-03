@@ -1,9 +1,8 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "motion/react"
 import { Card } from "./displayCard"
-import { Circle, CuteCircleOne } from "./cutecircles"
+import { CuteCircleOne } from "./cutecircles"
 
 interface CharacterCardProps {
     imagesrc : string,
@@ -14,33 +13,33 @@ interface CharacterCardProps {
 
 }
 
-const animateChild = {
-    initial : {
-        opacity : 0
-    },
-    animate : {
-        opacity : 1,
-        y : -8,
-        transition : {
-            ease : "easeIn",
-            duration : 0.4 
-        }
-    }
-}
+// const animateChild = {
+//     initial : {
+//         opacity : 0
+//     },
+//     animate : {
+//         opacity : 1,
+//         y : -8,
+//         transition : {
+//             ease : "easeIn",
+//             duration : 0.4 
+//         }
+//     }
+// }
 
-const animateParent = {
-    initial : {
-        y : 0
-    },
-    animate : {
-        y : -5,
-        transition : {
-            ease : "easeIn",
-            duration : 0.4
-        }
-    }
+// const animateParent = {
+//     initial : {
+//         y : 0
+//     },
+//     animate : {
+//         y : -5,
+//         transition : {
+//             ease : "easeIn",
+//             duration : 0.4
+//         }
+//     }
 
-}
+// }
 
 
 export const CharacterCard = ({imagesrc, id, characterName, quoteCount , movie} : CharacterCardProps) => {

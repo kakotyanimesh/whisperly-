@@ -5,6 +5,8 @@ import Image from "next/image"
 export default async function Player({params} : {params : {id : string}}){
 
     const id = (await params.id)
+    console.log(id);
+    
     return (
         <div className="flex gap-7 h-screen overflow-hidden ">
             <Card className="w-90 group h-[630px] space-y-10">
